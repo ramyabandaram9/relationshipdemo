@@ -1,0 +1,24 @@
+GET http://localhost:4004/odata/v4/relsrv/SalesOrderHeader
+
+###
+
+POST http://localhost:4004/odata/v4/relsrv/SalesOrderHeader
+Content-Type: application/json
+
+{
+    "description":"Final Sales Order",
+    "item_details_comp":[
+        {
+             "product": "Mouse",
+             "quantity": 5
+        },
+        {
+              "product": "Laptop",
+              "quantity": 2
+        }
+    ] 
+
+}
+
+###
+DELETE http://localhost:4004/odata/v4/relsrv/SalesOrderHeader(30000000-0000-0000-0000-000000000001)

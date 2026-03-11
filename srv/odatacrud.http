@@ -1,0 +1,41 @@
+
+#READ
+GET http://localhost:4004/odata/v4/relsrv/SalesOrderHeaderSet
+
+
+
+###
+#post
+POST http://localhost:4004/odata/v4/relsrv/SalesOrderHeaderSet
+Content-Type: application/json
+
+{
+    "description":"salesorder header and item",
+    "item_details_comp" : [
+        {"product": "Mouse", "quantity":100},
+        {"product":"KeyBoard","quantity":-20},
+        {"product":"","quantity":20},
+        {"product":"","quantity":0}
+    ]
+}
+
+###
+
+POST http://localhost:4004/odata/v4/relsrv/SalesOrderHeaderSet
+Content-Type: application/json
+
+{
+    "description":"New salesorder header and item",
+    "status" : "Completed"
+    
+}
+
+### actions
+POST http://localhost:4004/odata/v4/relsrv/SalesOrderHeaderSet(30000000-0000-0000-0000-000000000001)/approveOrder
+
+### header and Item
+GET http://localhost:4004/odata/v4/relsrv/SalesOrderHeaderSet?$expand=  item_details_comp
+
+### functions 
+
+GET http://localhost:4004/odata/v4/relsrv/getOrderTotal(orderId='30000000-0000-0000-0000-000000000001')

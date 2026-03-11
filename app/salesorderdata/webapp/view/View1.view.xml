@@ -1,0 +1,29 @@
+<mvc:View controllerName="salesorderdata.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+      <content>
+        <Table id="salesDesTabId" items="{/SalesOrderHeaderSet}" selectionChange="onItemPress" mode="SingleSelectLeft">
+        <headerToolbar>
+          <OverflowToolbar >
+            <Button text="Approve Order" press=".onApproveOrder"></Button>
+          </OverflowToolbar>
+        </headerToolbar>
+          <columns>
+            <Column >
+              <Text text="Description"></Text>
+            </Column>
+            <Column >
+              <Text text="Status"></Text>
+            </Column>
+          </columns>
+          <items>
+            <ColumnListItem press="on" >
+              <Text text="{description}"></Text>
+               <Text text="{status}"></Text>
+            </ColumnListItem>
+          </items>
+        </Table>
+      </content>
+    </Page>
+</mvc:View>

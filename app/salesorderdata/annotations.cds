@@ -1,0 +1,1 @@
+using relsrv as service from '../../srv/catalogsrv';
