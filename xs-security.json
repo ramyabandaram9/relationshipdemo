@@ -1,6 +1,19 @@
 {
   "xsappname": "relationshipdemo",
-  "tenant-mode": "dedicated",
-  "scopes": [],
-  "role-templates": []
+  "tenant-mode": "shared",
+  "scopes": [
+    {
+      "name": "$XSAPPNAME.View",
+      "description": "View access"
+    }
+  ],
+  "role-templates": [
+    {
+      "name": "Viewer",
+      "description": "Viewer role",
+      "scope-references": [
+        "$XSAPPNAME.View"
+      ]
+    }
+  ]
 }
