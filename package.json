@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A simple CAP project.",
   "dependencies": {
+    "@cap-js/hana": "^2",
     "@sap/cds": "^9",
     "@sap/xsenv": "^6.1.0",
     "@sap/xssec": "^4.12.2",
@@ -23,7 +24,10 @@
   ],
   "cds": {
     "requires": {
-      "html5-repo": true
+      "html5-repo": true,
+      "[production]": {
+        "db": "hana"
+      }
     }
   }
 }
